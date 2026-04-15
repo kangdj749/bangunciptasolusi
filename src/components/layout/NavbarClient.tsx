@@ -38,7 +38,7 @@ export default function NavbarClient({ posts }: Props) {
         <div className="container-main">
 
           {/* ================= GRID ARSITEKTUR ================= */}
-          <div className="grid grid-cols-12 items-center h-[64px]">
+          <div className="grid grid-cols-12 items-center h-[72px] gap-4">
 
             {/* LOGO */}
             <div className="col-span-6 md:col-span-3 flex items-center">

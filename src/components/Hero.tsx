@@ -9,10 +9,10 @@ export default function SpatialHero() {
     "https://res.cloudinary.com/de7fqcvpf/image/upload/v1774138404/masjid_unjani_v18_qopors.jpg";
 
   return (
-    <section className="relative min-h-[500px] md:min-h-[640px] flex items-center overflow-hidden bg-[rgb(var(--color-bg))]">
+    <section className="relative min-h-[500px] md:min-h-[640px] flex items-center overflow-hidden w-full bg-[rgb(var(--color-bg))]">
 
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 w-full h-full">
         <Image
           src={cloudinaryImage(heroImage, "banner")}
           alt="Architecture Engineering Construction"

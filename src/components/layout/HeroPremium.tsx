@@ -39,7 +39,7 @@ export default function HeroUltraPremium() {
   const slide = heroSlides[index];
 
   return (
-    <section className="relative h-[92vh] min-h-[640px] overflow-hidden bg-[rgb(var(--color-dark))]">
+    <section className="relative h-[92vh] min-h-[640px] overflow-hidden w-full bg-[rgb(var(--color-dark))]">
 
       {/* ===== BACKGROUND (crossfade + scale) ===== */}
       <AnimatePresence mode="wait">
@@ -49,8 +49,8 @@ export default function HeroUltraPremium() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: "easeOut" }}
-          className="absolute inset-0 will-change-transform"
-          style={{ transform: `translateY(${y}px)` }} // parallax
+          className="absolute inset-0 will-change-transform w-full h-full"
+          style={{ transform: `translate3d(0, ${y}px, 0)` }} // parallax
         >
           <Image
             src={slide.image}

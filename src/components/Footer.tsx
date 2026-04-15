@@ -9,10 +9,10 @@ export default function Footer() {
       <div className="container-main section-tight">
 
         {/* ================= GRID ARSITEKTUR ================= */}
-        <div className="grid grid-cols-12 gap-8 md:gap-10">
+        <div className="grid grid-cols-12 gap-8">
 
           {/* BRAND (lebih dominan) */}
-          <div className="col-span-12 md:col-span-5 space-y-4">
+          <div className="col-span-12 md:col-span-5">
 
             <h3 className="text-[16px] font-semibold tracking-[0.5px]">
               BANGUN.IN
@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
 
           {/* LAYANAN */}
-          <div className="col-span-6 md:col-span-2 space-y-3">
+          <div className="col-span-12 sm:col-span-6 md:col-span-2">
 
             <h4 className="caption-label text-[rgb(var(--color-white))]/50">
               Layanan
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           {/* KONTAK */}
-          <div className="col-span-6 md:col-span-3 space-y-3">
+          <div className="col-span-6 md:col-span-3">
 
             <h4 className="caption-label text-[rgb(var(--color-white))]/50">
               Kontak
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           {/* CTA */}
-          <div className="col-span-12 md:col-span-2 flex md:justify-end">
+          <div className="col-span-12 md:col-span-2">
 
             <div className="space-y-3">
 
