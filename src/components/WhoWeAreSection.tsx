@@ -15,14 +15,12 @@ export default function WhoWeAreSection() {
     <section className="section bg-[rgb(var(--color-bg))] overflow-hidden">
       <div className="container-main">
 
-        {/* ================= GRID ================= */}
         <div className="grid grid-cols-12 gap-10">
 
           {/* ================= TEXT ================= */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             className="col-span-12 md:col-span-5"
           >
 
@@ -34,14 +32,13 @@ export default function WhoWeAreSection() {
               Profesionalisme untuk Pembangunan Bangsa
             </h2>
 
-            <p className="text-[rgb(var(--color-muted))] body leading-[1.8] mb-5">
+            <p className="body text-muted leading-[1.8] mb-5">
               PT. Bangun Cipta Solusi hadir sebagai pusat kolaborasi tenaga ahli
-              arsitektur, teknik sipil, mekanikal elektrikal plumbing, dan disiplin lainnya
-              yang berkomitmen menghadirkan solusi yang terukur dan berkelanjutan.
+              arsitektur, teknik sipil, dan MEP yang menghadirkan solusi terukur.
             </p>
 
-            <p className="text-[rgb(var(--color-muted))] body leading-[1.8] mb-8">
-              Sinergi antara profesional muda dan tenaga senior menjadi fondasi
+            <p className="body text-muted leading-[1.8] mb-8">
+              Sinergi antara profesional muda dan senior menjadi fondasi
               dalam setiap proyek yang kami tangani.
             </p>
 
@@ -52,7 +49,7 @@ export default function WhoWeAreSection() {
                 <p className="text-[28px] md:text-[32px] font-semibold text-[rgb(var(--color-primary))]">
                   250+
                 </p>
-                <p className="text-[12px] text-[rgb(var(--color-muted))]">
+                <p className="text-[12px] text-muted">
                   Proyek Selesai
                 </p>
               </div>
@@ -61,8 +58,8 @@ export default function WhoWeAreSection() {
                 <p className="text-[28px] md:text-[32px] font-semibold text-[rgb(var(--color-primary))]">
                   12
                 </p>
-                <p className="text-[12px] text-[rgb(var(--color-muted))]">
-                  Tenaga Ahli Profesional
+                <p className="text-[12px] text-muted">
+                  Tenaga Ahli
                 </p>
               </div>
 
@@ -74,14 +71,12 @@ export default function WhoWeAreSection() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
             className="col-span-12 md:col-span-7"
           >
 
-            {/* MOBILE → STACK */}
+            {/* MOBILE VERSION */}
             <div className="flex flex-col gap-4 md:hidden">
 
-              {/* IMAGE 1 */}
               <div className="relative w-full h-[260px] rounded-[var(--radius-lg)] overflow-hidden">
                 <Image
                   src={cloudinaryImage(img1, "portrait")}
@@ -92,7 +87,6 @@ export default function WhoWeAreSection() {
                 />
               </div>
 
-              {/* IMAGE 2 */}
               <div className="relative w-full h-[260px] rounded-[var(--radius-lg)] overflow-hidden">
                 <Image
                   src={cloudinaryImage(img2, "portrait")}
@@ -105,10 +99,10 @@ export default function WhoWeAreSection() {
 
             </div>
 
-            {/* DESKTOP → GRID ARSITEKTUR */}
-            <div className="hidden md:grid grid-cols-12 gap-4">
+            {/* DESKTOP VERSION */}
+            <div className="hidden md:flex flex-col gap-6">
 
-              <div className="col-span-7 relative h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
+              <div className="relative h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
                 <Image
                   src={cloudinaryImage(img1, "banner")}
                   alt=""
@@ -118,20 +112,22 @@ export default function WhoWeAreSection() {
                 />
               </div>
 
-              <div className="col-span-5 relative h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
-                <Image
-                  src={cloudinaryImage(img2, "banner")}
-                  alt=""
-                  fill
-                  sizes="42vw"
-                  className="object-cover"
-                />
+              <div className="flex justify-end">
+                <div className="relative w-[70%] h-[240px] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-elevated)]">
+                  <Image
+                    src={cloudinaryImage(img2, "banner")}
+                    alt=""
+                    fill
+                    sizes="40vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
 
             </div>
 
             {/* QUOTE */}
-            <div className="mt-6 max-w-[520px]">
+            <div className="mt-6 max-w-full md:max-w-[520px]">
               <p className="text-[14px] italic text-[rgb(var(--color-text))] leading-[1.7]">
                 {"Design is not just what it looks like, it's how it works."}
               </p>
