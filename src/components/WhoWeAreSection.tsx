@@ -12,13 +12,13 @@ export default function WhoWeAreSection() {
     "https://res.cloudinary.com/de7fqcvpf/image/upload/v1773540464/rumahtinggal6_mgzbdp.png";
 
   return (
-    <section className="section bg-[rgb(var(--color-bg))]">
+    <section className="section bg-[rgb(var(--color-bg))] overflow-hidden">
       <div className="container-main">
 
-        {/* ================= GRID ARSITEKTUR ================= */}
-        <div className="grid grid-cols-12 gap-10 items-start">
+        {/* ================= GRID ================= */}
+        <div className="grid grid-cols-12 gap-10">
 
-          {/* ================= LEFT (TEXT) ================= */}
+          {/* ================= TEXT ================= */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -26,33 +26,30 @@ export default function WhoWeAreSection() {
             className="col-span-12 md:col-span-5"
           >
 
-            {/* LABEL */}
             <p className="caption-label text-[rgb(var(--color-primary))] mb-3">
               Who We Are
             </p>
 
-            {/* TITLE */}
             <h2 className="h2 mb-5">
               Profesionalisme untuk Pembangunan Bangsa
             </h2>
 
-            {/* CONTENT */}
             <p className="text-[rgb(var(--color-muted))] body leading-[1.8] mb-5">
               PT. Bangun Cipta Solusi hadir sebagai pusat kolaborasi tenaga ahli
               arsitektur, teknik sipil, mekanikal elektrikal plumbing, dan disiplin lainnya
-              yang berkomitmen menghadirkan solusi yang terukur, akuntabel, dan berkelanjutan.
+              yang berkomitmen menghadirkan solusi yang terukur dan berkelanjutan.
             </p>
 
-            <p className="text-[rgb(var(--color-muted))] body leading-[1.8] mb-10">
-              Sinergi antara profesional muda yang adaptif dengan tenaga senior berpengalaman
-              menjadi fondasi utama dalam setiap proyek yang kami tangani.
+            <p className="text-[rgb(var(--color-muted))] body leading-[1.8] mb-8">
+              Sinergi antara profesional muda dan tenaga senior menjadi fondasi
+              dalam setiap proyek yang kami tangani.
             </p>
 
-            {/* ================= STATS ================= */}
+            {/* STATS */}
             <div className="grid grid-cols-2 gap-6">
 
               <div>
-                <p className="text-[32px] font-semibold text-[rgb(var(--color-primary))]">
+                <p className="text-[28px] md:text-[32px] font-semibold text-[rgb(var(--color-primary))]">
                   250+
                 </p>
                 <p className="text-[12px] text-[rgb(var(--color-muted))]">
@@ -61,7 +58,7 @@ export default function WhoWeAreSection() {
               </div>
 
               <div>
-                <p className="text-[32px] font-semibold text-[rgb(var(--color-primary))]">
+                <p className="text-[28px] md:text-[32px] font-semibold text-[rgb(var(--color-primary))]">
                   12
                 </p>
                 <p className="text-[12px] text-[rgb(var(--color-muted))]">
@@ -73,7 +70,7 @@ export default function WhoWeAreSection() {
 
           </motion.div>
 
-          {/* ================= RIGHT (IMAGE COMPOSITION) ================= */}
+          {/* ================= IMAGE ================= */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,47 +78,63 @@ export default function WhoWeAreSection() {
             className="col-span-12 md:col-span-7"
           >
 
-            <div className="grid grid-cols-12 gap-4">
+            {/* MOBILE → STACK */}
+            <div className="flex flex-col gap-4 md:hidden">
 
-              {/* IMAGE 1 (BESAR) */}
-              <div className="col-span-12 md:col-span-7 relative h-[320px] md:h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
-
+              {/* IMAGE 1 */}
+              <div className="relative w-full h-[260px] rounded-[var(--radius-lg)] overflow-hidden">
                 <Image
-                  src={cloudinaryImage(img1, "banner")}
-                  alt="Project Engineering"
+                  src={cloudinaryImage(img1, "portrait")}
+                  alt=""
                   fill
-                  sizes="(max-width:768px) 100vw, 58vw"
+                  sizes="100vw"
                   className="object-cover"
                 />
-
-                <div className="absolute inset-0 bg-[rgb(var(--color-dark))]/10" />
-
               </div>
 
-              {/* IMAGE 2 (SMALL) */}
-              <div className="col-span-12 md:col-span-5 relative h-[200px] md:h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
-
+              {/* IMAGE 2 */}
+              <div className="relative w-full h-[260px] rounded-[var(--radius-lg)] overflow-hidden">
                 <Image
-                  src={cloudinaryImage(img2, "banner")}
-                  alt="Spatial Planning"
+                  src={cloudinaryImage(img2, "portrait")}
+                  alt=""
                   fill
-                  sizes="(max-width:768px) 100vw, 42vw"
+                  sizes="100vw"
                   className="object-cover"
                 />
-
-                <div className="absolute inset-0 bg-[rgb(var(--color-dark))]/10" />
-
               </div>
 
             </div>
 
-            {/* ================= QUOTE ================= */}
-            <div className="mt-6 max-w-[520px]">
+            {/* DESKTOP → GRID ARSITEKTUR */}
+            <div className="hidden md:grid grid-cols-12 gap-4">
 
+              <div className="col-span-7 relative h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
+                <Image
+                  src={cloudinaryImage(img1, "banner")}
+                  alt=""
+                  fill
+                  sizes="58vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="col-span-5 relative h-[420px] rounded-[var(--radius-lg)] overflow-hidden">
+                <Image
+                  src={cloudinaryImage(img2, "banner")}
+                  alt=""
+                  fill
+                  sizes="42vw"
+                  className="object-cover"
+                />
+              </div>
+
+            </div>
+
+            {/* QUOTE */}
+            <div className="mt-6 max-w-[520px]">
               <p className="text-[14px] italic text-[rgb(var(--color-text))] leading-[1.7]">
                 {"Design is not just what it looks like, it's how it works."}
               </p>
-
             </div>
 
           </motion.div>
