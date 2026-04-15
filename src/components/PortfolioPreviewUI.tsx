@@ -143,7 +143,7 @@ export default function PortfolioPreviewUI({ projects }: Props) {
                         {item.location} • {item.year}
                       </p>
 
-                      <h3 className="text-[14px] font-semibold leading-snug group-hover:text-primary transition">
+                      <h3 className="text-[14px] font-semibold text-[rgb(var(--color-white))] leading-snug group-hover:text-primary transition">
                         {item.title}
                       </h3>
 

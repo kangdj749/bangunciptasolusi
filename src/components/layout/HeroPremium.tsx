@@ -2,169 +2,204 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { heroSlides } from "./HeroSlide";
 
 export default function HeroUltraPremium() {
   const [index, setIndex] = useState(0);
-  const [y, setY] = useState(0); // parallax
 
-  const raf = useRef<number | null>(null);
-
-  // autoplay
   useEffect(() => {
     const t = setInterval(
       () => setIndex((i) => (i + 1) % heroSlides.length),
-      8000
+      6500
     );
     return () => clearInterval(t);
   }, []);
 
-  // subtle parallax (requestAnimationFrame for smoothness)
-  useEffect(() => {
-    const onScroll = () => {
-      if (raf.current) cancelAnimationFrame(raf.current);
-      raf.current = requestAnimationFrame(() => {
-        setY(window.scrollY * 0.15); // small factor → elegant
-      });
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (raf.current) cancelAnimationFrame(raf.current);
-    };
-  }, []);
-
   const slide = heroSlides[index];
 
-  return (
-    <section className="relative h-[92vh] min-h-[640px] overflow-hidden w-full bg-[rgb(var(--color-dark))]">
+  // split title jadi 2 baris
+  const words = slide.title.split(" ");
+  const mid = Math.ceil(words.length / 2);
 
-      {/* ===== BACKGROUND (crossfade + scale) ===== */}
+  const line1 = words.slice(0, mid).join(" ");
+  const line2 = words.slice(mid).join(" ");
+
+  return (
+    <section className="relative h-[95vh] min-h-[680px] overflow-hidden bg-[rgb(var(--color-dark))]">
+
+      {/* ================= BACKGROUND ================= */}
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.6, ease: "easeOut" }}
-          className="absolute inset-0 will-change-transform w-full h-full"
-          style={{ transform: `translate3d(0, ${y}px, 0)` }} // parallax
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
         >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
+          <motion.div
+            initial={{ scale: 1.08 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 7, ease: "easeOut" }} // 🔥 smooth zoom
+            className="absolute inset-0"
+          >
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </motion.div>
         </motion.div>
       </AnimatePresence>
 
-      {/* ===== OVERLAY (cinematic) ===== */}
-      <div className="absolute inset-0 bg-[rgb(var(--color-dark))]/55" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      {/* ================= OVERLAY ================= */}
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-      {/* ===== CONTENT ===== */}
+      {/* ================= CONTENT ================= */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container-main">
 
-          <div className="max-w-[820px]">
+          <div className="grid grid-cols-12 gap-8">
 
-            {/* Label */}
-            <motion.p
-              key={`label-${index}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="caption-light caption-label mb-6"
-            >
-              Konsultan Arsitektur & Rekayasa Teknik
-            </motion.p>
+            {/* TEXT LEFT */}
+            <div className="col-span-12 md:col-span-7 max-w-[900px]">
 
-            {/* Headline (editorial scale) */}
-            <motion.h1
-              key={slide.title}
-              initial={{ opacity: 0, y: 36 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9 }}
-              className="
-                text-[36px]
-                md:text-[56px]
-                lg:text-[68px]
-                font-semibold
-                leading-[1.06]
-                tracking-[-0.02em]
-                text-[rgb(var(--color-white))]
-                mb-6
-              "
-            >
-              {slide.title}
-            </motion.h1>
+              {/* LABEL */}
+              <motion.p
+                key={`label-${index}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="
+                  text-[11px]
+                  tracking-[0.45em]
+                  uppercase
+                  font-semibold
+                  text-[rgb(var(--color-gold-dark))]
+                  mb-6
+                "
+              >
+                {slide.label}
+              </motion.p>
 
-            {/* Subtitle */}
-            <motion.p
-              key={slide.subtitle}
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.05 }}
-              className="
-                text-[16px]
-                md:text-[18px]
-                leading-[1.8]
-                text-[rgb(var(--color-white))]/85
-                max-w-[640px]
-                mb-10
-              "
-            >
-              {slide.subtitle}
-            </motion.p>
+              {/* HEADLINE */}
+              <motion.h1
+                key={slide.title}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className="
+                  font-serif
+                  text-5xl md:text-7xl lg:text-8xl
+                  font-bold
+                  leading-[1.05]
+                  tracking-[-0.02em]
+                  mb-8
+                "
+              >
+                <span className="block text-[rgb(var(--color-white))]">
+                  {line1}
+                </span>
 
-            {/* CTA (elegant, not loud) */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.1 }}
-              className="flex flex-wrap gap-3"
-            >
-              <Link href="/kontak" className="btn btn-primary-hero">
-                Konsultasi Proyek
-              </Link>
+                <span className="block text-[rgb(var(--color-gold-dark))] italic font-light">
+                  {line2}.
+                </span>
+              </motion.h1>
 
-              <Link href="/portfolio" className="btn btn-outline-hero">
-                Lihat Portofolio
-              </Link>
-            </motion.div>
+              {/* CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9 }}
+                className="flex items-center gap-8 flex-wrap"
+              >
+
+                <Link
+                  href="/kontak"
+                  className="btn btn-primary-hero"
+                >
+                  {slide.ctaPrimary}
+                </Link>
+
+                <Link
+                  href="/portfolio"
+                  className="
+                    text-[rgb(var(--color-white))]/80
+                    text-[13px]
+                    uppercase
+                    tracking-[0.15em]
+                    border-b border-white/30
+                    hover:text-white
+                    hover:border-white
+                    transition
+                  "
+                >
+                  {slide.ctaSecondary}
+                </Link>
+
+              </motion.div>
+
+            </div>
+
+            {/* EMPTY SPACE RIGHT */}
+            <div className="hidden md:block md:col-span-5" />
 
           </div>
+
         </div>
       </div>
 
-      {/* ===== SLIDE PROGRESS (premium minimal indicator) ===== */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {heroSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`
-              h-[3px]
-              rounded-full
-              transition-all duration-500
-              ${i === index
-                ? "w-12 bg-[rgb(var(--color-white))]"
-                : "w-[10px] bg-[rgb(var(--color-white))]/40 hover:bg-[rgb(var(--color-white))]/70"}
-            `}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+      {/* ================= NAV ================= */}
+      <div className="absolute bottom-10 right-8 z-20 flex items-center gap-6">
 
-      {/* ===== SCROLL HINT ===== */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] tracking-[3px] text-[rgb(var(--color-white))]/60">
-        SCROLL
+        <div className="text-white/40 text-[11px] tracking-widest">
+          <span className="text-white">
+            {String(index + 1).padStart(2, "0")}
+          </span>{" "}
+          / {String(heroSlides.length).padStart(2, "0")}
+        </div>
+
+        <div className="flex gap-2">
+
+          <button
+            onClick={() =>
+              setIndex((index - 1 + heroSlides.length) % heroSlides.length)
+            }
+            className="
+              w-10 h-10
+              border border-white/20
+              text-white
+              hover:bg-[rgb(var(--color-primary))]
+              transition
+            "
+          >
+            ‹
+          </button>
+
+          <button
+            onClick={() =>
+              setIndex((index + 1) % heroSlides.length)
+            }
+            className="
+              w-10 h-10
+              border border-white/20
+              text-white
+              hover:bg-[rgb(var(--color-primary))]
+              transition
+            "
+          >
+            ›
+          </button>
+
+        </div>
+
       </div>
 
     </section>

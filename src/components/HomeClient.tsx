@@ -2,9 +2,13 @@
 
 
 import HybridWhatsAppCTA from "@/components/HybridWhatsAppCTA";
-import TrustStrip from "@/components/TrustStripSection";
-import VisualServicesPreview from "@/components/VisualServicesPreview";
+
+
 import HeroPremium from "./layout/HeroPremium";
+
+import WhoWeAreSection from "./WhoWeAreSection";
+import SpecializationSection from "./SpecializationSection";
+
 
 /* ================================
    STRUCTURED DATA
@@ -59,11 +63,9 @@ export default function HomeClient() {
 
       <main className="relative">
         <HeroPremium />
-
-        <TrustStrip />
-
-        <VisualServicesPreview />
-
+        <WhoWeAreSection/>
+        <SpecializationSection />
+       
         <HybridWhatsAppCTA />
       </main>
     </>
