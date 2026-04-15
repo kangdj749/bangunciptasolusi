@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+/* ======================================================
+   ENTERPRISE DESIGN TOKENS — ARCHITECTURE CONSULTANT
+====================================================== */
+
+:root {
+
+  /* ================================
+     BRAND COLORS
+  ================================= */
+
+  --color-primary: 128 0 0;
+  --color-secondary: 210 210 210;
+
+  --color-white: 255 255 255;
+  --color-black: 0 0 0;
+
+  /* ================================
+     NEUTRAL SCALE (SOFT ARCHITECTURE)
+  ================================= */
+
+  --color-bg: 255 255 255;
+  --color-surface: 248 248 249;
+  --color-elevated: 243 243 245;
+  --color-soft: 236 236 239;
+
+  --color-dark: 18 18 20;
+
+  --color-text: 22 22 26;
+  --color-muted: 105 105 110;
+  --color-subtle: 150 150 155;
+
+  /* ================================
+     BORDER SYSTEM
+  ================================= */
+
+  --color-border: 228 228 232;
+  --color-border-strong: 205 205 210;
+
+  /* ================================
+     SHADOW SYSTEM (SOFTER)
+  ================================= */
+
+  --shadow-soft: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-medium: 0 10px 30px rgba(0,0,0,0.06);
+  --shadow-elevated: 0 18px 50px rgba(0,0,0,0.08);
+
+  /* ================================
+     LAYOUT SYSTEM
+  ================================= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  /* 🔥 UPGRADE INI */
+  --container-max: 1280px;
+}
+
+/* ======================================================
+   BASE TYPOGRAPHY
+====================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui;
+
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: -0.005em;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ======================================================
+   LAYOUT
+====================================================== */
+
+.container-main {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* 🔥 spacing lebih lega */
+.section {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.section-tight {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* ======================================================
+   TYPOGRAPHY — ARCHITECTURE SCALE
+====================================================== */
+
+.h1 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .h1 {
+    font-size: 48px;
+  }
+}
+
+.h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.body-lg {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.body {
+  font-size: 15px;
+}
+
+.caption {
+  font-size: 12.5px;
+  color: rgb(var(--color-muted));
+}
+
+.caption-light {
+  font-size: 12.5px;
+  color: rgb(var(--color-white) / 0.75);
+}
+
+.caption-label {
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ======================================================
+   BUTTON SYSTEM — ARCHITECTURE PREMIUM
+====================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+
+  font-size: 13.5px;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+  will-change: transform;
+}
+
+/* ================= LIGHT CONTEXT ================= */
+
+.btn-primary {
+  background: rgb(var(--color-primary));
+  color: rgb(var(--color-white));
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: rgb(var(--color-primary) / 0.92);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid rgb(var(--color-border-strong));
+  color: rgb(var(--color-text));
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgb(var(--color-primary));
+  color: rgb(var(--color-white));
+}
+
+/* ================= DARK / HERO CONTEXT ================= */
+
+/* 🔥 ini yang kamu butuhin */
+.btn-primary-hero {
+  background: rgb(var(--color-white));
+  color: rgb(var(--color-dark));
+  box-shadow: var(--shadow-medium);
+  backdrop-filter: blur(6px);
+}
+
+.btn-primary-hero:hover {
+  background: rgb(var(--color-white) / 0.92);
+  transform: translateY(-1px);
+}
+
+/* 🔥 outline versi hero */
+.btn-outline-hero {
+  border: 1px solid rgb(var(--color-white) / 0.5);
+  color: rgb(var(--color-white));
+  background: transparent;
+}
+
+.btn-outline-hero:hover {
+  background: rgb(var(--color-white));
+  color: rgb(var(--color-dark));
+}
+
+/* ======================================================
+   CARD — PREMIUM & CLEAN
+====================================================== */
+
+.card-premium {
+  border: 1px solid rgb(var(--color-border));
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  background: rgb(var(--color-surface));
+  box-shadow: var(--shadow-soft);
+  transition: all 0.25s ease;
+}
+
+.card-premium:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+
+::selection {
+  background: rgb(var(--color-primary) / 0.15);
+}
+
+.grid-arch {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
