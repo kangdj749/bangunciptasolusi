@@ -6,20 +6,20 @@
 
 :root {
 
- /* ================================
+/* ================================
    BRAND COLORS
 ================================ */
 
---color-primary: 170 140 40;
---color-secondary: 210 210 210;
+  --color-primary: 128 0 0;        /* 🔥 merah brand */
+  --color-secondary: 210 210 210;
 
---color-white: 255 255 255;
---color-black: 0 0 0;
+  --color-white: 255 255 255;
+  --color-black: 0 0 0;
 
-/* 🔥 GOLD SYSTEM (PREMIUM) */
---color-gold: 212 175 55;
---color-gold-soft: 230 200 120;
---color-gold-dark: 170 140 40;
+  /* 🔥 GOLD SYSTEM */
+  --color-gold: 212 175 55;
+  --color-gold-soft: 230 200 120;
+  --color-gold-dark: 170 140 40;
 
   /* ================================
      NEUTRAL SCALE (SOFT ARCHITECTURE)
@@ -162,6 +162,14 @@ html, body {
   font-weight: 500;
 }
 
+.text-gold {
+  color: rgb(var(--color-gold));
+}
+
+.text-muted {
+  color: rgb(var(--color-muted));
+}
+
 /* ======================================================
    BUTTON SYSTEM — ARCHITECTURE PREMIUM
 ====================================================== */
@@ -184,54 +192,55 @@ html, body {
 
 /* ================= LIGHT CONTEXT ================= */
 
-.btn-primary {
-  background: rgb(var(--color-primary));
-  color: rgb(var(--color-white));
-  box-shadow: var(--shadow-soft);
-}
+/* ================= LIGHT CONTEXT ================= */
 
-.btn-primary:hover {
-  background: rgb(var(--color-primary) / 0.92);
-  transform: translateY(-1px);
-}
+  .btn-primary {
+    background: rgb(var(--color-primary)); /* 🔥 merah */
+    color: rgb(var(--color-white));
+  }
 
-.btn-outline {
-  border: 1px solid rgb(var(--color-border-strong));
-  color: rgb(var(--color-text));
-  background: transparent;
-}
+  .btn-primary:hover {
+    background: rgb(var(--color-primary) / 0.9);
+  }
 
-.btn-outline:hover {
-  background: rgb(var(--color-primary));
-  color: rgb(var(--color-white));
-}
+  /* OUTLINE */
+  .btn-outline {
+    border: 1px solid rgb(var(--color-border-strong));
+    color: rgb(var(--color-text));
+  }
 
+  .btn-outline:hover {
+    background: rgb(var(--color-primary));
+    color: rgb(var(--color-white));
+  }
+
+ 
 /* ================= DARK / HERO CONTEXT ================= */
 
-/* 🔥 ini yang kamu butuhin */
-.btn-primary-hero {
-  background: rgb(var(--color-white));
-  color: rgb(var(--color-dark));
-  box-shadow: var(--shadow-medium);
-  backdrop-filter: blur(6px);
-}
+  /* 🔥 ini yang kamu butuhin */
+  .btn-primary-hero {
+    background: rgb(var(--color-white));
+    color: rgb(var(--color-dark));
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(6px);
+  }
 
-.btn-primary-hero:hover {
-  background: rgb(var(--color-white) / 0.92);
-  transform: translateY(-1px);
-}
+  .btn-primary-hero:hover {
+    background: rgb(var(--color-white) / 0.92);
+    transform: translateY(-1px);
+  }
 
-/* 🔥 outline versi hero */
-.btn-outline-hero {
-  border: 1px solid rgb(var(--color-white) / 0.5);
-  color: rgb(var(--color-white));
-  background: transparent;
-}
+  /* 🔥 outline versi hero */
+  .btn-outline-hero {
+    border: 1px solid rgb(var(--color-white) / 0.5);
+    color: rgb(var(--color-white));
+    background: transparent;
+  }
 
-.btn-outline-hero:hover {
-  background: rgb(var(--color-white));
-  color: rgb(var(--color-dark));
-}
+  .btn-outline-hero:hover {
+    background: rgb(var(--color-white));
+    color: rgb(var(--color-dark));
+  }
 
 /* ======================================================
    CARD — PREMIUM & CLEAN

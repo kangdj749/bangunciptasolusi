@@ -25,7 +25,7 @@ export default function WhoWeAreSection() {
             className="w-full md:col-span-5"
           >
 
-            <p className="caption-label text-[rgb(var(--color-primary))] mb-3">
+            <p className="caption-label text-[rgb(var(--color-gold))] mb-3">
               Who We Are
             </p>
 
@@ -48,14 +48,14 @@ export default function WhoWeAreSection() {
             <div className="grid grid-cols-2 gap-6">
 
               <div>
-                <p className="text-[26px] md:text-[32px] font-semibold text-[rgb(var(--color-primary))]">
+                <p className="text-[26px] md:text-[32px] font-semibold text-[rgb(var(--color-gold))]">
                   250+
                 </p>
                 <p className="caption">Proyek Selesai</p>
               </div>
 
               <div>
-                <p className="text-[26px] md:text-[32px] font-semibold text-[rgb(var(--color-primary))]">
+                <p className="text-[26px] md:text-[32px] font-semibold text-[rgb(var(--color-gold))]">
                   12
                 </p>
                 <p className="caption">Tenaga Ahli</p>

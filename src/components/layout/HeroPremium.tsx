@@ -134,8 +134,8 @@ export default function HeroUltraPremium() {
                     uppercase
                     tracking-[0.15em]
                     border-b border-white/30
-                    hover:text-white
-                    hover:border-white
+                    hover:text-[rgb(var(--color-gold))]
+                    hover:border-[rgb(var(--color-gold))]
                     transition
                   "
                 >

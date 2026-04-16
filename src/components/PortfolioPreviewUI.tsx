@@ -44,7 +44,7 @@ export default function PortfolioPreviewUI({ projects }: Props) {
         <div className="grid grid-cols-12 mb-12 gap-6 items-end">
 
           <div className="col-span-12 md:col-span-6">
-            <p className="caption-label text-primary mb-3">
+            <p className="caption-label text-[rgb(var(--color-gold))] mb-3">
               Portofolio
             </p>
 

@@ -74,7 +74,7 @@ export default function SpecializationSection() {
         <div className="flex flex-col gap-4 mb-12 md:grid md:grid-cols-12 md:gap-6">
 
           <div className="md:col-span-5">
-            <p className="caption-label text-[rgb(var(--color-primary))] mb-2">
+            <p className="caption-label text-[rgb(var(--color-gold))] mb-2">
               Specialization
             </p>
 
@@ -126,7 +126,7 @@ export default function SpecializationSection() {
                   <div
                     className="
                       mb-3
-                      text-[rgb(var(--color-primary))]
+                      text-[rgb(var(--color-gold))]
                       group-hover:text-[rgb(var(--color-white))]
                       transition
                     "
