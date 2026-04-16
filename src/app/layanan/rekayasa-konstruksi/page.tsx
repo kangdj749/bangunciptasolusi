@@ -272,8 +272,8 @@ export default function Page() {
                 Survey Topografi
               </Link>
 
-               <Link href="/layanan/manajemen-kontruksi" className="btn btn-outline">
-                Manajemen Kontruksi
+               <Link href="/layanan/manajemen-konstruksi" className="btn btn-outline">
+                Manajemen Konstruksi
               </Link>
               <Link href="/layanan/soil-investigasi" className="btn btn-outline">
                 Soil Investigasi
