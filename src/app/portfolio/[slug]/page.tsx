@@ -22,10 +22,12 @@ export async function generateStaticParams() {
    SERVICES
 ============================== */
 const services = [
-  { name: "Penataan Ruang", href: "/layanan/penataan-ruang" },
-  { name: "Arsitektur", href: "/layanan/arsitektur" },
-  { name: "Rekayasa Teknik", href: "/layanan/rekayasa-teknik" },
-  { name: "Topografi & Geoteknik", href: "/layanan/topografi-geoteknik" },
+  { name: "Desain Interior", href: "/layanan/desain-interior" },
+  { name: "Desain Arsitektur", href: "/layanan/desain-arsitektur" },
+  { name: "Rekayasa Konstruksi", href: "/layanan/rekayasa-konstruksi" },
+  { name: "Survey Topografi", href: "/layanan/survey-topografi" },
+  { name: "Soil Investigasi", href: "/layanan/soil-investigasi" },
+  { name: "Manajemen Konstruksi", href: "/layanan#sistem-kerja" },
 ]
 
 /* ==============================

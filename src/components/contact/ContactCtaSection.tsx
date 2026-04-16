@@ -56,7 +56,7 @@ export default function ContactCtaSection() {
               href="#consultation-form"
               className="
                 btn
-                btn-primary-dark
+                btn-primary
                 
               "
             >
@@ -66,9 +66,7 @@ export default function ContactCtaSection() {
             {/* Secondary */}
             <a
               href="/kontak"
-              className="
-                btn
-                outline
+              className=" btn btn outline
               "
             >
               Hubungi Kami
