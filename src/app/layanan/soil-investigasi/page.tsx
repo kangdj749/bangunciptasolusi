@@ -1,42 +1,52 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
-import HeroArchitecture from "@/components/Layanan/arsitektur/HeroArchitecture"
-import ProblemSection from "@/components/Layanan/arsitektur/ProblemSection"
-import AgitationSection from "@/components/Layanan/arsitektur/AgitationSection"
-import SolutionSection from "@/components/Layanan/arsitektur/SolutionSection"
-import PortfolioSection from "@/components/Layanan/arsitektur/PortfolioSection"
-import ProcessSection from "@/components/Layanan/arsitektur/ProcessSection"
-import TrustSection from "@/components/Layanan/arsitektur/TrustSection"
-import CTASection from "@/components/Layanan/arsitektur/CTASection"
-import ServicesSection from "@/components/Layanan/arsitektur/ServicesSection"
 
+import HeroTopografi from "@/components/Layanan/topografi/HeroTopografi"
+import ProblemTopografi from "@/components/Layanan/topografi/ProblemTopografi"
+import SolutionTopografi from "@/components/Layanan/topografi/SolutionTopografi"
+import ServicesTopografi from "@/components/Layanan/topografi/ServicesTopografi"
+import SubServicesTopografi from "@/components/Layanan/topografi/SubServicesTopografi"
+import WhyTopografi from "@/components/Layanan/topografi/WhyTopografi"
+import ImpactTopografi from "@/components/Layanan/topografi/ImpactTopografi"
+import CTATopografi from "@/components/Layanan/topografi/CTATopografi"
+import FieldGallerySection from "@/components/Layanan/topografi/FieldGallerySection"
 import CityServiceList from "@/components/Layanan/LinkCitySection"
-import { cities } from "@/lib/seo/cities"
+/* =================================
+   SEO CONFIG
+================================= */
 
-/* ============================= */
-/* SEO METADATA */
-/* ============================= */
+const baseUrl = "https://bangunin.com"
+const service = "topografi-geoteknik"
+const pageUrl = `${baseUrl}/layanan/${service}`
+
+const title =
+  "Jasa Survey Topografi & Soil Investigation | Geoteknik Profesional"
+
+const description =
+  "Bangun.in menyediakan jasa survey topografi, soil investigation, dan geoteknik profesional untuk memastikan proyek konstruksi berdiri di atas data akurat, presisi, dan terpercaya di seluruh Indonesia."
+
+/* =================================
+   METADATA
+================================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bangunin.com"),
+  metadataBase: new URL(baseUrl),
 
-  title:
-    "Jasa Arsitek Profesional Indonesia | Desain Rumah & Bangunan Modern",
-
-  description:
-    "Jasa arsitek profesional untuk desain rumah, bangunan komersial, dan proyek konstruksi di seluruh Indonesia. Desain modern, fungsional, dan efisien.",
+  title,
+  description,
 
   keywords: [
-    "jasa arsitek",
-    "arsitek indonesia",
-    "desain rumah modern",
-    "jasa desain rumah",
-    "arsitek profesional",
+    "survey topografi",
+    "soil investigation",
+    "jasa sondir",
+    "uji tanah SPT",
+    "geoteknik indonesia",
+    "jasa topografi",
   ],
 
   alternates: {
-    canonical: "/layanan/arsitektur",
+    canonical: `/layanan/${service}`,
   },
 
   robots: {
@@ -45,10 +55,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Jasa Arsitek Profesional - Bangun.in",
-    description:
-      "Desain rumah dan bangunan modern dengan pendekatan arsitektur profesional.",
-    url: "https://bangunin.com/layanan/arsitektur",
+    title,
+    description,
+    url: pageUrl,
     siteName: "Bangun.in",
     locale: "id_ID",
     type: "website",
@@ -56,186 +65,195 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Arsitek Profesional - Bangun.in",
-    description:
-      "Solusi desain arsitektur modern dan profesional.",
+    title,
+    description,
   },
 }
 
-/* ============================= */
-/* JSON-LD */
-/* ============================= */
+/* =================================
+   PAGE
+================================= */
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Jasa Arsitektur",
-  provider: {
+export default function TopografiPage() {
+  /* =================================
+     SCHEMA JSON-LD
+  ================================== */
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Survey Topografi & Soil Investigation",
+    description,
+    provider: {
+      "@type": "Organization",
+      name: "Bangun.in",
+      url: baseUrl,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    serviceType: [
+      "Survey Topografi",
+      "Soil Investigation",
+      "Geotechnical Engineering",
+    ],
+    url: pageUrl,
+  }
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
     "@type": "Organization",
     name: "Bangun.in",
-    url: "https://bangunin.com",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "Indonesia",
-  },
-  serviceType: "Architectural Design",
-  url: "https://bangunin.com/layanan/arsitektur",
-}
+    url: baseUrl,
+    logo: `${baseUrl}/logo.png`,
+  }
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://bangunin.com" },
-    { "@type": "ListItem", position: 2, name: "Layanan", item: "https://bangunin.com/layanan" },
-    { "@type": "ListItem", position: 3, name: "Arsitektur", item: "https://bangunin.com/layanan/arsitektur" },
-  ],
-}
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Bangun.in",
-  url: "https://bangunin.com",
-}
-
-/* 🔥 ADVANCED SEO — CITY LIST */
-const cityListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  itemListElement: cities.map((city, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: `Jasa Arsitek ${city}`,
-    url: `https://bangunin.com/layanan/arsitektur/${city
-      .toLowerCase()
-      .replace(/\s+/g, "-")}`,
-  })),
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Apa itu jasa arsitek?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Jasa arsitek adalah layanan profesional untuk merancang bangunan mulai dari konsep hingga gambar kerja.",
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Beranda",
+        item: baseUrl,
       },
-    },
-    {
-      "@type": "Question",
-      name: "Apakah melayani seluruh Indonesia?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ya, kami melayani berbagai kota di Indonesia.",
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Layanan",
+        item: `${baseUrl}/layanan`,
       },
-    },
-  ],
-}
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Topografi & Geoteknik",
+        item: pageUrl,
+      },
+    ],
+  }
 
-/* ============================= */
-/* PAGE */
-/* ============================= */
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Apa itu survey topografi?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Survey topografi adalah proses pengukuran kondisi permukaan tanah untuk mendapatkan data elevasi, kontur, dan posisi yang akurat.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apa itu soil investigation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Soil investigation adalah proses investigasi kondisi tanah melalui pengujian seperti sondir dan SPT untuk mengetahui daya dukung tanah.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Apakah layanan tersedia di seluruh Indonesia?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ya, kami melayani survey topografi dan geoteknik di berbagai kota di Indonesia.",
+        },
+      },
+    ],
+  }
 
-export default function Page() {
   return (
     <>
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cityListSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {/* ================= JSON LD ================= */}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ================= CONTENT ================= */}
 
       <main className="bg-[rgb(var(--color-bg))]">
 
-        {/* HERO */}
-        <HeroArchitecture />
+        <HeroTopografi />
+        <ProblemTopografi />
+        <SolutionTopografi />
+        <FieldGallerySection />
+        <ServicesTopografi />
+        <SubServicesTopografi />
+        <WhyTopografi />
+        <ImpactTopografi />
 
-        {/* CORE CONTENT */}
-        <ProblemSection />
-        <AgitationSection />
-        <SolutionSection />
-        <ServicesSection />
-
-        {/* ============================= */}
-        {/* SEO INTRO (HIGH VALUE) */}
-        {/* ============================= */}
+        {/* ================= SEO TEXT ================= */}
 
         <section className="section-tight">
           <div className="container-main max-w-[760px]">
 
-            <h1 className="h2 mb-4">
-              Jasa Arsitek Profesional untuk Rumah & Bangunan Modern
-            </h1>
+            <h2 className="h2 mb-3">
+              Jasa Survey Topografi & Geoteknik Profesional
+            </h2>
 
-            <p className="body text-muted">
-              Kami menyediakan jasa arsitek profesional untuk berbagai kebutuhan,
-              mulai dari desain rumah tinggal, bangunan komersial,
-              hingga proyek skala besar. Setiap desain dirancang
-              dengan pendekatan yang menggabungkan estetika,
-              fungsi ruang, serta efisiensi biaya konstruksi.
-            </p>
-
-            <p className="body text-muted mt-3">
-              Dengan pengalaman menangani proyek di berbagai kota di Indonesia,
-              kami memastikan setiap rancangan tidak hanya menarik secara visual,
-              tetapi juga nyaman digunakan, efisien, dan siap berkembang
-              dalam jangka panjang.
+            <p className="text-[rgb(var(--color-muted))] body">
+              Layanan survey topografi dan geoteknik kami dirancang untuk memberikan
+              data lapangan yang akurat sebagai dasar pengambilan keputusan dalam
+              proyek konstruksi. Dengan metode pengukuran modern dan tim berpengalaman,
+              kami memastikan setiap data yang dihasilkan presisi, dapat dipertanggungjawabkan,
+              serta mendukung efisiensi dan keamanan proyek dalam jangka panjang.
             </p>
 
           </div>
         </section>
 
-        {/* ============================= */}
-        {/* CITY LIST (SEO + UX BALANCED) */}
-        {/* ============================= */}
+        {/* ================= CITY SEO ================= */}
 
-        <CityServiceList service="arsitektur" />
+        <CityServiceList service="topografi-geoteknik" />
 
-        {/* ============================= */}
-        {/* PORTFOLIO & TRUST */}
-        {/* ============================= */}
+        {/* ================= INTERNAL LINK ================= */}
 
-        <PortfolioSection />
-        <ProcessSection />
-        <TrustSection />
-
-        {/* ============================= */}
-        {/* RELATED SERVICES */}
-        {/* ============================= */}
-
-        <section className="section-tight bg-[rgb(var(--color-soft))]">
+        <section className="section-tight">
           <div className="container-main">
 
             <h3 className="h3 mb-4">
               Layanan Terkait
             </h3>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 text-[13px]">
 
               <Link href="/layanan/desain-interior" className="btn btn-outline">
                 Desain Interior
               </Link>
 
-              <Link href="/layanan/manajemen-konstruksi" className="btn btn-outline">
-                Manajemen Konstruksi
-              </Link>
-
-              <Link href="/layanan/survey-topografi" className="btn btn-outline">
-                Survey Topografi
-              </Link>
-
-               <Link href="/layanan/rekayasa-kontruksi" className="btn btn-outline">
-                Rekayasa Kontruksi
-              </Link>
-
               <Link href="/layanan/desain-arsitektur" className="btn btn-outline">
                 Desain Arsitektur
+              </Link>
+
+              <Link href="/layanan/manajemen-kontruksi" className="btn btn-outline">
+                Manajemen Kontruksi
+              </Link>
+
+              <Link href="/layanan/rekayasa-kontruksi" className="btn btn-outline">
+                Rekayasa Kontruksi
+              </Link>
+              <Link href="/layanan/survey-topografi" className="btn btn-outline">
+                Survey Topografi
               </Link>
 
 
@@ -244,8 +262,7 @@ export default function Page() {
           </div>
         </section>
 
-        {/* CTA */}
-        <CTASection />
+        <CTATopografi />
 
       </main>
     </>
