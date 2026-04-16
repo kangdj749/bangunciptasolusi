@@ -34,10 +34,12 @@ export default function Footer() {
 
             <ul className="space-y-2 text-[13px]">
               {[
-                { label: "Penataan Ruang", href: "/layanan/penataan-ruang" },
-                { label: "Arsitektur", href: "/layanan/arsitektur" },
-                { label: "Rekayasa Teknik", href: "/layanan/rekayasa-teknik" },
-                { label: "Topografi & Geoteknik", href: "/layanan/topografi-geoteknik" },
+                { label: "Desain Interior", href: "/layanan/desain-interior" },
+                { label: "Desain Arsitektur", href: "/layanan/desain-arsitektur" },
+                { label: "Rekayasa Konstruksi", href: "/layanan/rekayasa-konstruksi" },
+                { label: "Survey Topografi", href: "/layanan/survey-topografi" },
+                { label: "Soil Investigasi", href: "/layanan/soil-investigasi" },
+                { label: "Manajemen Konstrukksi", href: "/layanan/manajemen-konstruksi" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
