@@ -19,38 +19,45 @@ type Item = {
   title: string;
   desc: string;
   icon: React.ReactNode;
+  href: string;
 };
 
 const services: Item[] = [
   {
     title: "Desain Arsitektur",
-    desc: "Perancangan eksterior ikonik yang menggabungkan estetika modern dengan fungsionalitas ruang.",
+    desc: "Perancangan eksterior ikonik dengan keseimbangan estetika dan fungsi ruang.",
     icon: <FiHome size={22} />,
+    href: "/layanan/desain-arsitektur",
   },
   {
     title: "Desain Interior",
-    desc: "Kurasi ruang dalam yang personal dan mewah dengan harmoni material dan pencahayaan.",
+    desc: "Kurasi ruang dalam yang personal dan mewah dengan harmoni material.",
     icon: <FiGrid size={22} />,
+    href: "/layanan/desain-interior",
   },
   {
     title: "Rekayasa Konstruksi",
-    desc: "Perhitungan struktur presisi untuk menjamin keamanan dan efisiensi bangunan.",
+    desc: "Perhitungan struktur presisi untuk keamanan dan efisiensi bangunan.",
     icon: <FiTool size={22} />,
+    href: "/layanan/rekayasa-konstruksi",
   },
   {
     title: "Survey Topografi",
-    desc: "Pengukuran lahan akurat untuk pemetaan kontur dan batas wilayah proyek.",
+    desc: "Pengukuran lahan akurat untuk pemetaan kontur proyek.",
     icon: <FiMap size={22} />,
+    href: "/layanan/survey-topografi",
   },
   {
     title: "Soil Investigasi",
-    desc: "Analisis daya dukung tanah untuk menentukan sistem pondasi terbaik.",
+    desc: "Analisis daya dukung tanah untuk pondasi optimal.",
     icon: <FiLayers size={22} />,
+    href: "/layanan/soil-investigasi",
   },
   {
     title: "Manajemen Konstruksi",
-    desc: "Pengawasan profesional agar proyek tepat waktu dan sesuai standar.",
+    desc: "Pengawasan profesional untuk memastikan kualitas proyek.",
     icon: <FiCheckCircle size={22} />,
+    href: "/layanan/manajemen-konstruksi",
   },
 ];
 
@@ -64,10 +71,10 @@ export default function SpecializationSection() {
       <div className="container-main">
 
         {/* ================= HEADER ================= */}
-        <div className="grid grid-cols-12 gap-6 mb-14">
+        <div className="flex flex-col gap-4 mb-12 md:grid md:grid-cols-12 md:gap-6">
 
-          <div className="col-span-12 md:col-span-5">
-            <p className="caption-label text-[rgb(var(--color-primary))] mb-3">
+          <div className="md:col-span-5">
+            <p className="caption-label text-[rgb(var(--color-primary))] mb-2">
               Specialization
             </p>
 
@@ -76,16 +83,17 @@ export default function SpecializationSection() {
             </h2>
           </div>
 
-          <div className="col-span-12 md:col-span-7 flex items-end">
-            <p className="body text-muted max-w-[520px]">
-              Solusi teknik dan desain komprehensif untuk setiap tahap pembangunan Anda.
+          <div className="md:col-span-7">
+            <p className="body text-[rgb(var(--color-muted))] max-w-[520px]">
+              Solusi teknik dan desain komprehensif untuk setiap tahap pembangunan,
+              dirancang secara profesional dan terstruktur.
             </p>
           </div>
 
         </div>
 
         {/* ================= GRID ================= */}
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid gap-5 md:grid-cols-12">
 
           {services.map((item, i) => (
             <motion.div
@@ -94,89 +102,80 @@ export default function SpecializationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
               viewport={{ once: true }}
-              className="col-span-12 sm:col-span-6 lg:col-span-4 group"
+              className="md:col-span-6 lg:col-span-4 group"
             >
 
-              <div
-                className="
-                  h-full
-                  p-6
-                  rounded-[var(--radius-lg)]
-                  border border-[rgb(var(--color-border))]
-                  bg-[rgb(var(--color-surface))]
-                  transition-all duration-300
+              <Link href={item.href} className="block h-full">
 
-                  hover:bg-[rgb(var(--color-dark))]
-                  hover:border-[rgb(var(--color-dark))]
-                  hover:shadow-[var(--shadow-elevated)]
-                "
-              >
-
-                {/* ICON */}
                 <div
                   className="
-                    w-10 h-10
-                    flex items-center justify-center
-                    rounded-[var(--radius-md)]
-                    bg-[rgb(var(--color-primary))]/10
-                    text-[rgb(var(--color-primary))]
-                    mb-4
+                    h-full
+                    p-5
+                    rounded-[var(--radius-lg)]
+                    border border-[rgb(var(--color-border))]
+                    bg-[rgb(var(--color-surface))]
+                    transition-all duration-300
 
-                    group-hover:bg-[rgb(var(--color-white))]/10
-                    group-hover:text-[rgb(var(--color-white))]
-                    transition
+                    hover:bg-[rgb(var(--color-dark))]
+                    hover:border-[rgb(var(--color-dark))]
+                    hover:shadow-[var(--shadow-elevated)]
                   "
                 >
-                  {item.icon}
+
+                  {/* ICON */}
+                  <div
+                    className="
+                      mb-3
+                      text-[rgb(var(--color-primary))]
+                      group-hover:text-[rgb(var(--color-white))]
+                      transition
+                    "
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* TITLE */}
+                  <h3
+                    className="
+                      text-[15px]
+                      font-semibold
+                      mb-2
+                      text-[rgb(var(--color-text))]
+                      group-hover:text-[rgb(var(--color-white))]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* DESC */}
+                  <p
+                    className="
+                      text-[13px]
+                      leading-[1.7]
+                      text-[rgb(var(--color-muted))]
+                      mb-5
+                      group-hover:text-[rgb(var(--color-white))]/80
+                    "
+                  >
+                    {item.desc}
+                  </p>
+
+                  {/* LINK */}
+                  <span
+                    className="
+                      text-[12px]
+                      uppercase
+                      tracking-[0.15em]
+                      text-[rgb(var(--color-primary))]
+                      group-hover:text-[rgb(var(--color-white))]
+                    "
+                  >
+                    Selengkapnya →
+                  </span>
+
                 </div>
 
-                {/* TITLE */}
-                <h3
-                  className="
-                    text-[16px]
-                    font-semibold
-                    mb-2
-                    text-[rgb(var(--color-text))]
-
-                    group-hover:text-[rgb(var(--color-white))]
-                    transition
-                  "
-                >
-                  {item.title}
-                </h3>
-
-                {/* DESC */}
-                <p
-                  className="
-                    text-[13px]
-                    leading-[1.7]
-                    text-[rgb(var(--color-muted))]
-                    mb-6
-
-                    group-hover:text-[rgb(var(--color-white))]/80
-                    transition
-                  "
-                >
-                  {item.desc}
-                </p>
-
-                {/* LINK */}
-                <Link
-                  href="/layanan"
-                  className="
-                    text-[12px]
-                    uppercase
-                    tracking-[0.15em]
-                    text-[rgb(var(--color-primary))]
-
-                    group-hover:text-[rgb(var(--color-white))]
-                    transition
-                  "
-                >
-                  Selengkapnya →
-                </Link>
-
-              </div>
+              </Link>
 
             </motion.div>
           ))}
