@@ -19,7 +19,6 @@ export default function HeroUltraPremium() {
 
   const slide = heroSlides[index];
 
-  // split title jadi 2 baris
   const words = slide.title.split(" ");
   const mid = Math.ceil(words.length / 2);
 
@@ -42,7 +41,7 @@ export default function HeroUltraPremium() {
           <motion.div
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 7, ease: "easeOut" }} // 🔥 smooth zoom
+            transition={{ duration: 7, ease: "easeOut" }}
             className="absolute inset-0"
           >
             <Image
@@ -58,17 +57,35 @@ export default function HeroUltraPremium() {
       </AnimatePresence>
 
       {/* ================= OVERLAY ================= */}
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
+      
+
+     {/* ================= OVERLAY ================= */}
+
+        {/* 🔥 gradient fokus kiri (area text saja) */}
+        <div className="
+          absolute inset-0
+          bg-gradient-to-r
+          from-[rgb(var(--color-dark))]/85
+          via-[rgb(var(--color-dark))]/40
+          to-transparent
+        " />
+
+        {/* 🔥 bottom subtle (biar blend) */}
+        <div className="
+          absolute inset-0
+          bg-gradient-to-t
+          from-[rgb(var(--color-dark))]/50
+          via-transparent
+          to-transparent
+        " />
       {/* ================= CONTENT ================= */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container-main">
 
           <div className="grid grid-cols-12 gap-8">
 
-            {/* TEXT LEFT */}
+            {/* TEXT */}
             <div className="col-span-12 md:col-span-7 max-w-[900px]">
 
               {/* LABEL */}
@@ -76,13 +93,12 @@ export default function HeroUltraPremium() {
                 key={`label-${index}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
                 className="
                   text-[11px]
                   tracking-[0.45em]
                   uppercase
                   font-semibold
-                  text-[rgb(var(--color-gold-dark))]
+                  text-[rgb(var(--color-gold))]
                   mb-6
                 "
               >
@@ -94,19 +110,26 @@ export default function HeroUltraPremium() {
                 key={slide.title}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
                 className="
                   text-5xl md:text-7xl lg:text-8xl
                   leading-[1.05]
                   tracking-[-0.02em]
                   mb-8
                 "
+                style={{
+                  textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+                }}
               >
                 <span className="block text-[rgb(var(--color-white))] font-serif font-bold">
                   {line1}
                 </span>
 
-                <span className="block text-[rgb(var(--color-gold-dark))] italic font-light">
+                <span className="
+                  block
+                  text-[rgb(var(--color-gold))]
+                  italic
+                  font-semibold
+                ">
                   {line2}.
                 </span>
               </motion.h1>
@@ -115,7 +138,6 @@ export default function HeroUltraPremium() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9 }}
                 className="flex items-center gap-8 flex-wrap"
               >
 
@@ -133,7 +155,7 @@ export default function HeroUltraPremium() {
                     text-[13px]
                     uppercase
                     tracking-[0.15em]
-                    border-b border-white/30
+                    border-b border-[rgb(var(--color-white))]/30
                     hover:text-[rgb(var(--color-gold))]
                     hover:border-[rgb(var(--color-gold))]
                     transition
@@ -146,58 +168,12 @@ export default function HeroUltraPremium() {
 
             </div>
 
-            {/* EMPTY SPACE RIGHT */}
+            {/* EMPTY */}
             <div className="hidden md:block md:col-span-5" />
 
           </div>
 
         </div>
-      </div>
-
-      {/* ================= NAV ================= */}
-      <div className="absolute bottom-10 right-8 z-20 flex items-center gap-6">
-
-        <div className="text-white/40 text-[11px] tracking-widest">
-          <span className="text-white">
-            {String(index + 1).padStart(2, "0")}
-          </span>{" "}
-          / {String(heroSlides.length).padStart(2, "0")}
-        </div>
-
-        <div className="flex gap-2">
-
-          <button
-            onClick={() =>
-              setIndex((index - 1 + heroSlides.length) % heroSlides.length)
-            }
-            className="
-              w-10 h-10
-              border border-white/20
-              text-white
-              hover:bg-[rgb(var(--color-primary))]
-              transition
-            "
-          >
-            ‹
-          </button>
-
-          <button
-            onClick={() =>
-              setIndex((index + 1) % heroSlides.length)
-            }
-            className="
-              w-10 h-10
-              border border-white/20
-              text-white
-              hover:bg-[rgb(var(--color-primary))]
-              transition
-            "
-          >
-            ›
-          </button>
-
-        </div>
-
       </div>
 
     </section>
