@@ -16,11 +16,11 @@ export const menuItems = [
     label: "Layanan",
     href: "/layanan",
     children: [
-      { label: "Penataan Ruang", href: "/layanan/penataan-ruang" },
-      { label: "Arsitektur", href: "/layanan/arsitektur" },
-      { label: "Rekayasa Teknik", href: "/layanan/rekayasa-teknik" },
-      { label: "Topografi & Geoteknik", href: "/layanan/topografi-geoteknik" },
-      { label: "Sistem Kerja Profesional", href: "/layanan#sistem-kerja" },
+      { label: "Desain Interior", href: "/layanan/desain-interior" },
+      { label: "Desain Arsitektur", href: "/layanan/desain-arsitektur" },
+      { label: "Rekayasa Kontruksi", href: "/layanan/rekayasa-kontruksi" },
+      { label: "Survey Topografi", href: "/layanan/survey-topografi" },
+      { label: "Manajemen Kontruksi", href: "/layanan#sistem-kerja" },
     ],
   },
   {
