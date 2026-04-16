@@ -27,7 +27,7 @@ const services: Item[] = [
     title: "Desain Arsitektur",
     desc: "Perancangan eksterior ikonik dengan keseimbangan estetika dan fungsi ruang.",
     icon: <FiHome size={22} />,
-    href: "/layanan/arsitektur",
+    href: "/layanan/desain-arsitektur",
   },
   {
     title: "Desain Interior",
