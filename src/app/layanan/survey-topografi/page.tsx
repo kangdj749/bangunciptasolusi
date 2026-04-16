@@ -237,17 +237,25 @@ export default function TopografiPage() {
 
             <div className="flex flex-wrap gap-3 text-[13px]">
 
-              <Link href="/layanan/penataan-ruang" className="btn btn-outline">
-                Penataan Ruang
+              <Link href="/layanan/desain-interior" className="btn btn-outline">
+                Desain Interior
               </Link>
 
-              <Link href="/layanan/rekayasa-teknik" className="btn btn-outline">
-                Rekayasa Teknik
+              <Link href="/layanan/desain-arsitektur" className="btn btn-outline">
+                Desain Arsitektur
               </Link>
 
-              <Link href="/layanan/arsitektur" className="btn btn-outline">
-                Arsitektur
+              <Link href="/layanan/manajemen-kontruksi" className="btn btn-outline">
+                Manajemen Kontruksi
               </Link>
+
+              <Link href="/layanan/rekayasa-kontruksi" className="btn btn-outline">
+                Rekayasa Kontruksi
+              </Link>
+              <Link href="/layanan/soil-investigasi" className="btn btn-outline">
+                Soil Investigasi
+              </Link>
+
 
             </div>
 

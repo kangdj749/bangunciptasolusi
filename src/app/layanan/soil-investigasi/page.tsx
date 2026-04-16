@@ -233,8 +233,9 @@ export default function Page() {
                <Link href="/layanan/rekayasa-kontruksi" className="btn btn-outline">
                 Rekayasa Kontruksi
               </Link>
-              <Link href="/layanan/soil-investigasi" className="btn btn-outline">
-                Soil Investigasi
+
+              <Link href="/layanan/desain-arsitektur" className="btn btn-outline">
+                Desain Arsitektur
               </Link>
 
 

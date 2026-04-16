@@ -260,17 +260,25 @@ export default function Page() {
 
             <div className="flex flex-wrap gap-3 text-[13px]">
 
-              <Link href="/layanan/penataan-ruang" className="btn btn-outline">
-                Penataan Ruang
+              <Link href="/layanan/desain-interior" className="btn btn-outline">
+                Desain Interior
               </Link>
 
-              <Link href="/layanan/arsitektur" className="btn btn-outline">
-                Arsitektur
+              <Link href="/layanan/desain-arsitektur" className="btn btn-outline">
+                Desain Arsitektur
               </Link>
 
-              <Link href="/layanan/topografi-geoteknik" className="btn btn-outline">
-                Topografi & Geoteknik
+              <Link href="/layanan/survey-topografi" className="btn btn-outline">
+                Survey Topografi
               </Link>
+
+               <Link href="/layanan/manajemen-kontruksi" className="btn btn-outline">
+                Manajemen Kontruksi
+              </Link>
+              <Link href="/layanan/soil-investigasi" className="btn btn-outline">
+                Soil Investigasi
+              </Link>
+
 
             </div>
 
