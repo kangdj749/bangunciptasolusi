@@ -96,15 +96,13 @@ export default function HeroUltraPremium() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 className="
-                  font-serif
                   text-5xl md:text-7xl lg:text-8xl
-                  font-bold
                   leading-[1.05]
                   tracking-[-0.02em]
                   mb-8
                 "
               >
-                <span className="block text-[rgb(var(--color-white))]">
+                <span className="block text-[rgb(var(--color-white))] font-serif font-bold">
                   {line1}
                 </span>
 

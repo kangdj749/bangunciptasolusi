@@ -18,9 +18,10 @@ export const menuItems = [
     children: [
       { label: "Desain Interior", href: "/layanan/desain-interior" },
       { label: "Desain Arsitektur", href: "/layanan/desain-arsitektur" },
-      { label: "Rekayasa Kontruksi", href: "/layanan/rekayasa-kontruksi" },
+      { label: "Rekayasa Kontruksi", href: "/layanan/rekayasa-konstruksi" },
       { label: "Survey Topografi", href: "/layanan/survey-topografi" },
       { label: "Manajemen Kontruksi", href: "/layanan#sistem-kerja" },
+      { label: "Soil Investigasi", href: "/layanan/soil-investigasi" },
     ],
   },
   {
