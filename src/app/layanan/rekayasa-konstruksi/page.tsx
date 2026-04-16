@@ -248,7 +248,7 @@ export default function Page() {
 
         {/* ================= CITY SEO ================= */}
 
-        <CityServiceList service="rekayasa-teknik" />
+        <CityServiceList service="rekayasa-konstruksi" />
         {/* ================= INTERNAL LINK ================= */}
 
         <section className="section-tight">

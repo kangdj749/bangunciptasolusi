@@ -195,7 +195,7 @@ export default function Page() {
         {/* CITY LIST (SEO + UX BALANCED) */}
         {/* ============================= */}
 
-        <CityServiceList service="arsitektur" />
+        <CityServiceList service="desain-arsitektur" />
 
         {/* ============================= */}
         {/* PORTFOLIO & TRUST */}

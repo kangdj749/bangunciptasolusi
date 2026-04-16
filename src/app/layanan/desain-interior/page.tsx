@@ -180,7 +180,7 @@ export default function Page() {
         {/* CITY SEO GRID (POWER SEO) */}
         {/* ============================= */}
 
-         <CityServiceList service="penataan-ruang" />
+         <CityServiceList service="desain-interior" />
         {/* ============================= */}
         {/* RELATED SERVICES */}
         {/* ============================= */}

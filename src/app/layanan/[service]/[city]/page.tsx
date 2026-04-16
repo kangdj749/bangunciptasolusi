@@ -76,7 +76,7 @@ export default function Page({ params }: PageProps) {
       <section className="section-tight bg-[rgb(var(--color-soft))]">
         <div className="container-main max-w-[820px]">
 
-          <p className="caption-label text-[rgb(var(--color-primary))] mb-2">
+          <p className="caption-label text-[rgb(var(--color-gold))] mb-2">
             Layanan di {city}
           </p>
 
@@ -86,7 +86,7 @@ export default function Page({ params }: PageProps) {
 
           <p className="body text-[rgb(var(--color-muted))]">
             {ai.intro}
-          </p>
+          </p> 
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/kontak" className="btn btn-primary">
@@ -148,21 +148,29 @@ export default function Page({ params }: PageProps) {
           <h3 className="h3 mb-4">Layanan Terkait</h3>
 
           <div className="flex flex-wrap gap-3">
-            <Link href="/layanan/arsitektur" className="btn btn-soft">
-              Jasa Arsitektur
-            </Link>
+            <Link href="/layanan/desain-interior" className="btn btn-outline">
+                Desain Interior
+              </Link>
 
-            <Link href="/layanan/rekayasa-teknik" className="btn btn-soft">
-              Rekayasa Teknik
-            </Link>
+              <Link href="/layanan/desain-arsitektur" className="btn btn-outline">
+                Desain Arsitektur
+              </Link>
 
-            <Link href="/layanan/penataan-ruang" className="btn btn-soft">
-              Penataan Ruang
-            </Link>
+              <Link href="/layanan/manajemen-konstruksi" className="btn btn-outline">
+                Manajemen Konstruksi
+              </Link>
 
-            <Link href="/layanan/topografi-geoteknik" className="btn btn-soft">
-              Topografi & Geoteknik
-            </Link>
+              <Link href="/layanan/survey-topografi" className="btn btn-outline">
+                Survey Topografi
+              </Link>
+
+               <Link href="/layanan/rekayasa-kontruksi" className="btn btn-outline">
+                Rekayasa Kontruksi
+              </Link>
+              <Link href="/layanan/soil-investigasi" className="btn btn-outline">
+                Soil Investigasi
+              </Link>
+              
           </div>
 
         </div>

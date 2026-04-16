@@ -224,7 +224,7 @@ export default function TopografiPage() {
 
         {/* ================= CITY SEO ================= */}
 
-        <CityServiceList service="topografi-geoteknik" />
+        <CityServiceList service="survey-topografi" />
 
         {/* ================= INTERNAL LINK ================= */}
 
