@@ -13,7 +13,7 @@ import CityServiceList from "@/components/Layanan/LinkCitySection"
    SEO CONFIG
 ================================= */
 
-const baseUrl = "https://bangunin.com"
+const baseUrl = "https://bangunciptasolusi.com"
 const service = "rekayasa-teknik"
 const pageUrl = `${baseUrl}/layanan/${service}`
 

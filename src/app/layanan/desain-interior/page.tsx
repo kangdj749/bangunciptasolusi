@@ -17,7 +17,7 @@ import CityServiceList from "@/components/Layanan/LinkCitySection"
 /* ============================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bangunin.com"),
+  metadataBase: new URL("https://bangunciptasolusi.com"),
 
   title:
     "Jasa Penataan Ruang & Urban Planning Indonesia | RTRW, RDTR Profesional",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "/layanan/penataan-ruang",
+    canonical: "/layanan/desain-interior",
   },
 
   robots: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Jasa Penataan Ruang & Urban Planning - Bangun.in",
     description:
       "Perencanaan wilayah, kota, dan kawasan berkelanjutan di Indonesia.",
-    url: "https://bangunin.com/layanan/penataan-ruang",
+    url: "https://bangunciptasolusi.com/layanan/desain-interior",
     siteName: "Bangun.in",
     locale: "id_ID",
     type: "website",
@@ -73,23 +73,23 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "Bangun.in",
-    url: "https://bangunin.com",
+    url: "https://bangunciptasolusi.com",
   },
   areaServed: {
     "@type": "Country",
     name: "Indonesia",
   },
   serviceType: "Urban Planning",
-  url: "https://bangunin.com/layanan/penataan-ruang",
+  url: "https://bangunciptasolusi.com/layanan/desain-interior",
 }
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://bangunin.com" },
-    { "@type": "ListItem", position: 2, name: "Layanan", item: "https://bangunin.com/layanan" },
-    { "@type": "ListItem", position: 3, name: "Penataan Ruang", item: "https://bangunin.com/layanan/penataan-ruang" },
+    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://bangunciptasolusi.com" },
+    { "@type": "ListItem", position: 2, name: "Layanan", item: "https://bangunciptasolusi.com/layanan" },
+    { "@type": "ListItem", position: 3, name: "Penataan Ruang", item: "https://bangunciptasolusi.com/layanan/desain-interior" },
   ],
 }
 
@@ -97,7 +97,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Bangun.in",
-  url: "https://bangunin.com",
+  url: "https://bangunciptasolusi.com",
 }
 
 const faqSchema = {

@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     "Bangun.in menyediakan layanan konsultan arsitektur, engineering, perencanaan wilayah, topografi, dan geoteknik untuk mendukung pembangunan yang terencana dan profesional.",
 
   alternates: {
-    canonical: "https://bangun-in.com/layanan",
+    canonical: "https://bangunciptasolusi.com/layanan",
   },
 
   openGraph: {
     title: "Layanan Engineering Consultant | Bangun.in",
     description:
       "Layanan profesional konsultan arsitektur, engineering, geoteknik, dan topografi.",
-    url: "https://bangun-in.com/layanan",
+    url: "https://bangunciptasolusi.com/layanan",
     type: "website",
   },
 
@@ -45,7 +45,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "EngineeringService",
   name: "Bangun.in Engineering Consultant",
-  url: "https://bangun-in.com/layanan",
+  url: "https://bangunciptasolusi.com/layanan",
   serviceType: [
     "Architecture Design",
     "Engineering Consultant",
@@ -86,7 +86,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Beranda",
-      item: "https://bangun-in.com",
+      item: "https://bangunciptasolusi.com",
     },
     {
       "@type": "ListItem",

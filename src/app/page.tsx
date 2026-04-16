@@ -8,17 +8,20 @@ import FinalCTASection from "@/components/FinalCTASection";
 ================================ */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bangunin.com"),
+  metadataBase: new URL("https://bangunciptasolusi.com"),
 
   title: "Bangun.in | Konsultan Arsitektur & Engineering Profesional",
   description:
-    "Bangun.in adalah konsultan arsitektur, engineering, topografi dan geoteknik profesional di Indonesia.",
+    "Bangun.in adalah konsultan arsitektur, engineering, rekayasa konstruksi, topografi, soil investigasi dan geoteknik profesional di Indonesia.",
 
   keywords: [
     "konsultan arsitektur",
+    "konsultan interior",
     "konsultan engineering",
     "jasa geoteknik",
     "konsultan topografi",
+    "konsultan rekayasa konstruksi",
+    "konsultan soil investigasi",
   ],
 
   alternates: {

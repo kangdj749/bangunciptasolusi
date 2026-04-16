@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 /* ============================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bangunin.com"),
+  metadataBase: new URL("https://bangunciptasolusi.com"),
 
   title: {
     default: "Bangun.in — Konsultan Arsitektur & Engineering Indonesia",
@@ -39,13 +39,15 @@ export const metadata: Metadata = {
     "jasa penataan ruang",
     "geoteknik",
     "topografi",
+    "soil investigasi",
+    "desain interior",
   ],
 
   openGraph: {
     title: "Bangun.in Engineering Consultant",
     description:
       "Konsultan arsitektur dan engineering profesional di Indonesia.",
-    url: "https://bangunin.com",
+    url: "https://bangunciptasolusi.com",
     siteName: "Bangun.in",
     locale: "id_ID",
     type: "website",
@@ -72,8 +74,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "PT Bangun Cipta Solusi",
-  url: "https://bangunin.com",
-  logo: "https://bangunin.com/logo.png",
+  url: "https://bangunciptasolusi.com",
+  logo: "https://bangunciptasolusi.com/logo.png",
   email: "bangunciptasolusi01@gmail.com",
   telephone: "+6287765505935",
 };
@@ -82,10 +84,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Bangun.in",
-  url: "https://bangunin.com",
+  url: "https://bangunciptasolusi.com",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://bangunin.com/blog/search?q={search_term_string}",
+    target: "https://bangunciptasolusi.com/blog/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };

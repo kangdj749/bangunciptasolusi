@@ -19,7 +19,7 @@ import { cities } from "@/lib/seo/cities"
 /* ============================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bangunin.com"),
+  metadataBase: new URL("https://bangunciptasolusi.com"),
 
   title:
     "Jasa Arsitek Profesional Indonesia | Desain Rumah & Bangunan Modern",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Jasa Arsitek Profesional - Bangun.in",
     description:
       "Desain rumah dan bangunan modern dengan pendekatan arsitektur profesional.",
-    url: "https://bangunin.com/layanan/arsitektur",
+    url: "https://bangunciptasolusi.com/layanan/desain-arsitektur",
     siteName: "Bangun.in",
     locale: "id_ID",
     type: "website",
@@ -73,23 +73,23 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "Bangun.in",
-    url: "https://bangunin.com",
+    url: "https://bangunciptasolusi.com",
   },
   areaServed: {
     "@type": "Country",
     name: "Indonesia",
   },
   serviceType: "Architectural Design",
-  url: "https://bangunin.com/layanan/arsitektur",
+  url: "https://bangunciptasolusi.com/layanan/desain-arsitektur",
 }
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://bangunin.com" },
-    { "@type": "ListItem", position: 2, name: "Layanan", item: "https://bangunin.com/layanan" },
-    { "@type": "ListItem", position: 3, name: "Arsitektur", item: "https://bangunin.com/layanan/arsitektur" },
+    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://bangunciptasolusi.com" },
+    { "@type": "ListItem", position: 2, name: "Layanan", item: "https://bangunciptasolusi.com/layanan" },
+    { "@type": "ListItem", position: 3, name: "Arsitektur", item: "https://bangunciptasolusi.com/layanan/desain-arsitektur" },
   ],
 }
 
@@ -97,7 +97,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Bangun.in",
-  url: "https://bangunin.com",
+  url: "https://bangunciptasolusi.com",
 }
 
 /* 🔥 ADVANCED SEO — CITY LIST */
@@ -108,7 +108,7 @@ const cityListSchema = {
     "@type": "ListItem",
     position: i + 1,
     name: `Jasa Arsitek ${city}`,
-    url: `https://bangunin.com/layanan/arsitektur/${city
+    url: `https://bangunciptasolusi.com/layanan/desain-arsitektur/${city
       .toLowerCase()
       .replace(/\s+/g, "-")}`,
   })),

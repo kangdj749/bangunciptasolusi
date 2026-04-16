@@ -5,14 +5,16 @@ import { getPortfolios } from "@/lib/portfolio"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
-  const baseUrl = "https://bangunin.com"
+  const baseUrl = "https://bangunciptasolusi.com"
   const now = new Date()
 
   const services = [
-    "arsitektur",
-    "penataan-ruang",
-    "rekayasa-teknik",
-    "topografi-geoteknik",
+    "desain arsitektur",
+    "desain interior",
+    "manjemen konstruksi",
+    "rekayasa-konstruksi",
+    "survey topografi",
+    "soil investigasi",
   ]
 
   const formatDate = (date?: string) => {
