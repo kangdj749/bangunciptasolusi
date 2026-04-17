@@ -1,6 +1,5 @@
 import ContactHeroSection from "@/components/contact/ContactHeroSection";
-import ContactInfoSection from "@/components/contact/ContactInfoSection";
-import ContactLegalSection from "@/components/contact/ContactLegalSection";
+
 import ContactFormSection from "@/components/contact/ContactFormSection";
 import ContactCtaSection from "@/components/contact/ContactCtaSection";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -11,8 +10,7 @@ export default function ContactPage() {
       <SectionWrapper>
       <ContactHeroSection />
       </SectionWrapper>
-      <ContactInfoSection />
-      <ContactLegalSection />
+      
       <ContactFormSection />
       <ContactCtaSection />
     </main>

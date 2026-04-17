@@ -4,72 +4,143 @@ import { motion } from "framer-motion";
 
 export default function ContactCtaSection() {
   return (
-    <section className="relative section-tight overflow-hidden bg-primary text-[rgb(var(--color-white))]">
+    <section className="relative section-tight overflow-hidden">
 
-      {/* Gradient Depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[rgb(var(--color-primary))] via-[rgb(var(--color-primary))] to-[rgb(var(--color-dark))]/30 pointer-events-none" />
+      {/* ================= BASE BACKGROUND ================= */}
+      <div className="absolute inset-0 bg-[rgb(var(--color-primary))]" />
 
-      {/* Soft Light */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.10),transparent_55%)] pointer-events-none" />
+      {/* ================= DEPTH GRADIENT ================= */}
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-br
+          from-[rgb(var(--color-primary))]
+          via-[rgb(var(--color-primary))]
+          to-[rgb(var(--color-dark))]/40
+        "
+      />
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-b from-transparent to-[rgb(var(--color-primary))]" />
+      {/* ================= GOLD ACCENT GLOW ================= */}
+      <div
+        className="
+          pointer-events-none
+          absolute top-[-120px] right-[-80px]
+          w-[420px] h-[420px]
+          rounded-full
+          bg-[rgb(var(--color-gold))]/15
+          blur-[140px]
+        "
+      />
+
+      {/* ================= TEXT SAFE OVERLAY ================= */}
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-r
+          from-[rgb(var(--color-dark))]/60
+          via-[rgb(var(--color-dark))]/30
+          to-transparent
+        "
+      />
 
       <div className="container-main relative z-10">
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
-          className="max-w-[520px]"
+          transition={{ duration: 0.6 }}
+          className="max-w-[560px]"
         >
 
-          {/* Eyebrow */}
-          <p className="text-[10px] tracking-[1.6px] uppercase font-medium text-[rgb(var(--color-white))]/70 mb-3">
+          {/* ================= EYEBROW ================= */}
+          <p
+            className="
+              caption-label
+              text-[rgb(var(--color-gold-soft))]
+              mb-4
+            "
+          >
             Kolaborasi Profesional
           </p>
 
-          {/* Divider */}
-          <div className="w-10 h-[2px] bg-[rgb(var(--color-white))]/70 mb-4" />
+          {/* ================= DIVIDER ================= */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-[2px] bg-[rgb(var(--color-gold))]" />
+            <div className="w-4 h-[1px] bg-[rgb(var(--color-white))]/30" />
+          </div>
 
-          {/* Heading */}
-          <h2 className="h2 text-[rgb(var(--color-white))] mb-3">
+          {/* ================= HEADING ================= */}
+          <h2
+            className="
+              text-[26px] sm:text-[30px] md:text-[34px]
+              font-semibold
+              leading-[1.25]
+              tracking-[-0.01em]
+              text-[rgb(var(--color-white))]
+              mb-4
+            "
+          >
             Mari Wujudkan Proyek
-            <span className="block">
+            <span className="block text-[rgb(var(--color-white))]">
               Berkualitas Bersama
             </span>
           </h2>
 
-          {/* Description */}
-          <p className="body text-[rgb(var(--color-white))]/80 max-w-[460px] mb-6">
-            Setiap pembangunan yang berkualitas dimulai dari perencanaan yang
-            matang dan kolaborasi yang profesional. Tim kami siap membantu
-            merancang solusi teknik yang terukur, efisien, dan akuntabel.
+          {/* ================= DESCRIPTION ================= */}
+          <p
+            className="
+              body
+              text-[rgb(var(--color-white))]/80
+              max-w-[500px]
+              mb-8
+            "
+          >
+            Setiap pembangunan berkualitas dimulai dari perencanaan yang matang
+            dan kolaborasi yang profesional. Kami menghadirkan solusi teknik
+            yang terukur, efisien, dan akuntabel.
           </p>
 
-          {/* CTA */}
-          <div className="flex flex-wrap items-center gap-3">
+          {/* ================= CTA ================= */}
+          <div className="flex flex-wrap items-center gap-4">
 
-            {/* Primary */}
+            {/* PRIMARY CTA */}
             <a
               href="#consultation-form"
               className="
                 btn
-                btn-primary
-                
+                bg-[rgb(var(--color-white))]
+                text-[rgb(var(--color-dark))]
+                px-6 py-3
+
+                shadow-[var(--shadow-medium)]
+
+                hover:bg-[rgb(var(--color-white))]/90
+                hover:shadow-[var(--shadow-elevated)]
+                transition
               "
             >
               Ajukan Konsultasi
             </a>
 
-            {/* Secondary */}
+            {/* SECONDARY CTA */}
             <a
               href="/kontak"
-              className=" btn btn outline
+              className="
+                text-[13px]
+                uppercase
+                tracking-[0.15em]
+                text-[rgb(var(--color-white))]/80
+
+                border-b
+                border-[rgb(var(--color-white))]/30
+
+                hover:text-[rgb(var(--color-gold))]
+                hover:border-[rgb(var(--color-gold))]
+                transition
               "
             >
-              Hubungi Kami
+              Hubungi Kami →
             </a>
 
           </div>

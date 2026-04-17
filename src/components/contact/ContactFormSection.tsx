@@ -53,9 +53,7 @@ Kontak Client :
 ${data.phone}
       `;
 
-      const waURL = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(
-        message
-      )}`;
+      const waURL = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(message)}`;
 
       reset();
       window.location.href = waURL;
@@ -79,118 +77,144 @@ ${data.phone}
   ];
 
   return (
-    <section id="consultation-form" className="section-tight">
+    <section className="section-tight bg-[rgb(var(--color-bg))]">
       <div className="container-main">
 
         {/* ================= HEADER ================= */}
+        <div className="max-w-[560px] mb-14">
 
-        <div className="max-w-[520px] mb-10">
-
-          <p className="text-[10px] tracking-[1.6px] uppercase font-medium text-primary mb-3">
+          <p className="caption-label text-[rgb(var(--color-gold))] mb-3">
             Konsultasi Proyek
           </p>
 
-          <div className="w-10 h-[2px] bg-primary mb-4" />
+          <div className="w-12 h-[2px] bg-[rgb(var(--color-gold))] mb-5" />
 
-          <h2 className="h2 text-[rgb(var(--color-text))] mb-3">
-            Ajukan Permohonan Konsultasi
+          <h2 className="h2 mb-4">
+            Ajukan Permohonan
+            <span className="block text-[rgb(var(--color-gold-dark))]">
+              Konsultasi Profesional
+            </span>
           </h2>
 
-          <p className="body text-muted max-w-[460px]">
-            Sampaikan kebutuhan proyek Anda melalui formulir berikut. 
-            Tim kami akan menghubungi Anda untuk diskusi awal dan 
-            penjadwalan konsultasi.
+          <p className="body text-[rgb(var(--color-muted))] max-w-[480px]">
+            Sampaikan kebutuhan proyek Anda secara ringkas. Tim kami akan
+            menghubungi Anda untuk diskusi awal dan penyusunan pendekatan teknis.
           </p>
 
         </div>
 
-        {/* ================= FORM ================= */}
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="grid gap-4 md:grid-cols-2"
+        {/* ================= FORM WRAPPER ================= */}
+        <div
+          className="
+            border border-[rgb(var(--color-border))]
+            rounded-[var(--radius-lg)]
+            bg-[rgb(var(--color-surface))]
+            shadow-[var(--shadow-soft)]
+            p-6 md:p-8
+          "
         >
 
-          {formFields.map((item) => (
-            <div key={item.field} className="flex flex-col gap-1.5">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="grid grid-cols-12 gap-5"
+          >
 
-              <label className="text-[11px] font-medium text-[rgb(var(--color-text))]">
-                {item.label}
+            {formFields.map((item) => (
+              <div
+                key={item.field}
+                className="col-span-12 md:col-span-6 flex flex-col gap-2"
+              >
+
+                <label className="text-[11px] font-medium text-[rgb(var(--color-subtle))]">
+                  {item.label}
+                </label>
+
+                <input
+                  type={item.type}
+                  {...register(item.field, { required: true })}
+                  className="
+                    h-[44px]
+                    px-4
+                    rounded-[var(--radius-md)]
+                    border border-[rgb(var(--color-border))]
+                    bg-[rgb(var(--color-bg))]
+                    text-[rgb(var(--color-text))]
+                    text-[13px]
+
+                    transition-all duration-200
+
+                    focus:outline-none
+                    focus:border-[rgb(var(--color-gold))]
+                    focus:ring-2
+                    focus:ring-[rgb(var(--color-gold))]/15
+                  "
+                />
+
+              </div>
+            ))}
+
+            {/* TEXTAREA */}
+            <div className="col-span-12 flex flex-col gap-2">
+
+              <label className="text-[11px] font-medium text-[rgb(var(--color-subtle))]">
+                Deskripsi Singkat Proyek
               </label>
 
-              <input
-                type={item.type}
-                {...register(item.field, { required: true })}
+              <textarea
+                rows={5}
+                {...register("deskripsi_singkat")}
                 className="
-                  h-[36px]
-                  px-3
-                  rounded-[var(--radius-sm)]
-                  border
-                  border-[rgb(var(--color-border))]
+                  px-4 py-3
+                  rounded-[var(--radius-md)]
+                  border border-[rgb(var(--color-border))]
                   bg-[rgb(var(--color-bg))]
                   text-[rgb(var(--color-text))]
-                  text-[12.5px]
-                  transition-all
-                  duration-200
+                  text-[13px]
+                  leading-[1.7]
+
+                  transition-all duration-200
 
                   focus:outline-none
-                  focus:border-[rgb(var(--color-primary))]
+                  focus:border-[rgb(var(--color-gold))]
                   focus:ring-2
-                  focus:ring-[rgb(var(--color-primary))]/15
+                  focus:ring-[rgb(var(--color-gold))]/15
                 "
               />
 
             </div>
-          ))}
 
-          {/* TEXTAREA */}
+            {/* CTA */}
+            <div className="col-span-12 pt-4 flex items-center justify-between flex-wrap gap-4">
 
-          <div className="md:col-span-2 flex flex-col gap-1.5">
+              {/* Note kecil biar terasa “enterprise” */}
+              <p className="text-[11px] text-[rgb(var(--color-subtle))]">
+                * Tim kami akan merespon dalam 1×24 jam kerja
+              </p>
 
-            <label className="text-[11px] font-medium text-[rgb(var(--color-text))]">
-              Deskripsi Singkat Proyek
-            </label>
+              <button
+                type="submit"
+                disabled={submitting}
+                className="
+                  btn
+                  bg-[rgb(var(--color-primary))]
+                  text-[rgb(var(--color-white))]
+                  px-6 py-3
 
-            <textarea
-              rows={4}
-              {...register("deskripsi_singkat")}
-              className="
-                px-3 py-2
-                rounded-[var(--radius-sm)]
-                border
-                border-[rgb(var(--color-border))]
-                bg-[rgb(var(--color-bg))]
-                text-[rgb(var(--color-text))]
-                text-[12.5px]
-                leading-[1.6]
-                transition-all
-                duration-200
+                  shadow-[var(--shadow-soft)]
 
-                focus:outline-none
-                focus:border-[rgb(var(--color-primary))]
-                focus:ring-2
-                focus:ring-[rgb(var(--color-primary))]/15
-              "
-            />
+                  hover:bg-[rgb(var(--color-primary))]/90
+                  hover:shadow-[var(--shadow-medium)]
+                  transition
+                "
+              >
+                {submitting ? "Mengirim..." : "Kirim Permohonan"}
+              </button>
 
-          </div>
+            </div>
 
-          {/* BUTTON */}
+          </form>
 
-          <div className="md:col-span-2 pt-2">
-            <button
-              type="submit"
-              disabled={submitting}
-              className="
-                btn btn-primary
-                
-              "
-            >
-              {submitting ? "Mengirim..." : "Kirim Permohonan"}
-            </button>
-          </div>
-
-        </form>
+        </div>
 
       </div>
     </section>

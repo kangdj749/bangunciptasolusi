@@ -24,19 +24,8 @@ export const menuItems = [
       { label: "Soil Investigasi", href: "/layanan/soil-investigasi" },
     ],
   },
-  {
-    label: "Portfolio",
-    href: "/portfolio",
-    children: [
-      { label: "Hunian Premium Bandung", href: "/portfolio/hunian-premium-bandung" },
-      { label: "Mesjid Esa Kareem", href: "/portfolio/mesjid-esa-kareem" },
-      { label: "Gedung Fakultas Teknik Unjani", href: "/portfolio/gedung-fakultas-teknik-unjani" },
-      { label: "Kantor PSDA Ciliman", href: "/portfolio/kantor-psda-ciliman" },
-      { label: "Masjid Unjani", href: "/portfolio/masjid-unjani" },
-      { label: "Interior Gedung Perkantoran", href: "/portfolio/interior-gedung-perkantoran" },
-
-    ],
-  },
+  { label: "Portfolio", href: "/portfolio" },
+  
   { label: "Kontak", href: "/kontak" },
   { label: "Blog", href: "/blog" },
 ];
