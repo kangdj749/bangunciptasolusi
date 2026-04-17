@@ -11,7 +11,18 @@ export default function HeroTopografi() {
     "https://res.cloudinary.com/de7fqcvpf/image/upload/v1774597400/topografi_zaod2m.jpg";
 
   return (
-    <section className="relative overflow-hidden bg-[rgb(var(--color-dark))]">
+    <section className="
+        relative
+        h-[100vh]
+        min-h-[720px]
+
+        /* 🔥 ini kunci biar nempel ke navbar */
+        -mt-[72px]
+        pt-[72px]
+
+        overflow-hidden
+        bg-[rgb(var(--color-dark))]
+      ">
 
       {/* BG */}
       <motion.div

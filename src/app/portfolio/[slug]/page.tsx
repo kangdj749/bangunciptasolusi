@@ -59,7 +59,7 @@ export default async function PortfolioDetailPage({
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden">
 
-        <div className="relative h-[340px] md:h-[420px]">
+        <div className="relative h-[340px] md:h-[420px] ">
           <Image
             src={cloudinaryImage(project.cover_image, "banner")}
             alt={project.title}

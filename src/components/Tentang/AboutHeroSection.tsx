@@ -11,7 +11,18 @@ export default function AboutHeroSection() {
     "https://res.cloudinary.com/de7fqcvpf/image/upload/v1773537420/kost1_clr806.png";
 
   return (
-    <section className="relative overflow-hidden bg-[rgb(var(--color-dark))]">
+    <section className="
+        relative
+        h-[100vh]
+        min-h-[720px]
+
+        /* 🔥 ini kunci biar nempel ke navbar */
+        -mt-[72px]
+        pt-[72px]
+
+        overflow-hidden
+        bg-[rgb(var(--color-dark))]
+      ">
 
       {/* ================= BACKGROUND ================= */}
       <motion.div
