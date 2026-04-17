@@ -26,7 +26,20 @@ export default function HeroUltraPremium() {
   const line2 = words.slice(mid).join(" ");
 
   return (
-    <section className="relative h-[95vh] min-h-[680px] overflow-hidden bg-[rgb(var(--color-dark))]">
+    <section
+      className="
+        relative
+        h-[100vh]
+        min-h-[720px]
+
+        /* 🔥 ini kunci biar nempel ke navbar */
+        -mt-[72px]
+        pt-[72px]
+
+        overflow-hidden
+        bg-[rgb(var(--color-dark))]
+      "
+    >
 
       {/* ================= BACKGROUND ================= */}
       <AnimatePresence mode="wait">
@@ -58,27 +71,32 @@ export default function HeroUltraPremium() {
 
       {/* ================= OVERLAY ================= */}
 
-      
-
-     {/* ================= OVERLAY ================= */}
-
-        {/* 🔥 gradient fokus kiri (area text saja) */}
-        <div className="
+      {/* 🔥 FOKUS KE AREA TEXT (KIRI) */}
+      <div
+        className="
           absolute inset-0
+          pointer-events-none
+
           bg-gradient-to-r
-          from-[rgb(var(--color-dark))]/85
-          via-[rgb(var(--color-dark))]/40
+          from-[rgb(var(--color-dark))]/80
+          via-[rgb(var(--color-dark))]/35
           to-transparent
-        " />
+        "
+      />
 
-        {/* 🔥 bottom subtle (biar blend) */}
-        <div className="
+      {/* 🔥 DEPTH BAWAH (biar blend ke section berikutnya) */}
+      <div
+        className="
           absolute inset-0
+          pointer-events-none
+
           bg-gradient-to-t
           from-[rgb(var(--color-dark))]/50
           via-transparent
           to-transparent
-        " />
+        "
+      />
+
       {/* ================= CONTENT ================= */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container-main">
@@ -111,25 +129,27 @@ export default function HeroUltraPremium() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="
-                  text-5xl md:text-7xl lg:text-8xl
+                  text-4xl sm:text-5xl md:text-7xl lg:text-8xl
                   leading-[1.05]
                   tracking-[-0.02em]
                   mb-8
                 "
                 style={{
-                  textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+                  textShadow: "0 6px 30px rgba(0,0,0,0.45)",
                 }}
               >
                 <span className="block text-[rgb(var(--color-white))] font-serif font-bold">
                   {line1}
                 </span>
 
-                <span className="
-                  block
-                  text-[rgb(var(--color-gold))]
-                  italic
-                  font-semibold
-                ">
+                <span
+                  className="
+                    block
+                    text-[rgb(var(--color-gold))]
+                    italic
+                    font-semibold
+                  "
+                >
                   {line2}.
                 </span>
               </motion.h1>
@@ -138,9 +158,8 @@ export default function HeroUltraPremium() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-8 flex-wrap"
+                className="flex items-center gap-6 flex-wrap"
               >
-
                 <Link
                   href="/kontak"
                   className="btn btn-primary-hero"
@@ -155,7 +174,9 @@ export default function HeroUltraPremium() {
                     text-[13px]
                     uppercase
                     tracking-[0.15em]
+
                     border-b border-[rgb(var(--color-white))]/30
+
                     hover:text-[rgb(var(--color-gold))]
                     hover:border-[rgb(var(--color-gold))]
                     transition
@@ -163,7 +184,6 @@ export default function HeroUltraPremium() {
                 >
                   {slide.ctaSecondary}
                 </Link>
-
               </motion.div>
 
             </div>
@@ -175,7 +195,6 @@ export default function HeroUltraPremium() {
 
         </div>
       </div>
-
     </section>
   );
 }
